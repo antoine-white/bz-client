@@ -30,6 +30,7 @@ const Connexion: React.FC = () => {
                         connected: true,
                         username: json.login,
                         token: json.token,
+                        startDate : new Date()
                     });
                     setRedirect(DEFAUT_REDIRECTION);
                 } else {
@@ -41,8 +42,6 @@ const Connexion: React.FC = () => {
             }
         }
     }
-
-
 
     if (redirect !== "") {
         return <Redirect to={redirect} />

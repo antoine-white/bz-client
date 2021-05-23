@@ -15,7 +15,7 @@ const Menu: React.FC<Menuprop> = ({ items }) => {
         <nav>
             <ul>
                 {items.map(e => (
-                <li>
+                <li key={e.path}>
                     <Link to={e.path}>{e.text}</Link>
                 </li>
                 ))}

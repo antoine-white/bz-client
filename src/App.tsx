@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ConnexionProvider, { ConnexionContext } from "./contexts/ConnexionContext";
-import Menu, { MenuItemProp } from "./menu/Menu";
+import Menu, { MenuItemProp } from "./components/Menu";
 
 const Connexion = lazy(() => import("./pages/Connexion"));
 const Home = lazy(() => import("./pages/Home"));
 const Footer = lazy(() => import("./components/Footer"));
 const User = lazy(() => import("./pages/User"));
-const Account = lazy(() => import("./pages/Account"));
+const Accounts = lazy(() => import("./pages/Accounts"));
 const Deconnexion = lazy(() => import("./pages/Deconnexion"));
 
 const MENU_PROP: MenuItemProp[] = [
@@ -41,7 +41,7 @@ const App: React.FC = () => {
               <Connexion />
             </Route>
             <Route path="/Account">
-              <Account />
+              <Accounts />
             </Route>
             <Route path="/Disconnect">
               <Deconnexion />
