@@ -27,7 +27,6 @@ const Accounts : React.FC = () => {
                 const response = await fetch(url.toString());
                 if (response.status === 200) {
                     const json = await response.json();
-                    console.log(json);
                     setAccount({
                         money : json.money,
                         name : json.name,
@@ -54,7 +53,7 @@ const Accounts : React.FC = () => {
         return <p>Error in loading account</p>
     }else {
         return (
-            <main>
+            <main className="container">
                 <Account {...account}/>
             </main>
         );

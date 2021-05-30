@@ -4,12 +4,12 @@ import { ConnexionContext } from "..";
 
 const User : React.FC = () => {
     const { connexion } = useContext(ConnexionContext);
-    console.log(connexion); 
     return (
-        <main>
+        <main className="container p-4">
             <h1>Hello {connexion.username} !</h1>
-            <Link to="/Account">See account</Link>
-            { (connexion.startDate === undefined)?<p>Connected since {connexion.startDate}</p>:<></>}
+            <Link  to="/Account">See account</Link>
+            <br/>
+            { (connexion.startDate !== undefined)?<small className="my-4">Connected since {connexion.startDate.toUTCString()}</small >:<></>}
         </main>
     )
 }

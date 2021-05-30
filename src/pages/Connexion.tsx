@@ -9,7 +9,7 @@ export const DEFAUT_REDIRECTION = "/";
 const Connexion: React.FC = () => {
     const [redirect, setRedirect] = useState<string>("");
     const [errors, setErrors] = useState<string>("");
-    const { connexion, connect } = useContext(ConnexionContext);
+    const { connect } = useContext(ConnexionContext);
 
     const inputEl = useRef<HTMLInputElement>(null);
     const passwordEl = useRef<HTMLInputElement>(null);
@@ -47,21 +47,20 @@ const Connexion: React.FC = () => {
         return <Redirect to={redirect} />
     }
     return (
-        <main>
-            <section>
+        <main className="container p-4">
+            <section className="form-group col-sm border border-primary rounded p-4">
+                <h1>Connect or sign in</h1>
                 <p>{errors}</p>
-                <div>
+                <div >
                     <label htmlFor="name">Username</label>
-                    <input ref={inputEl} type="text" id="name" />
+                    <input className="form-control" ref={inputEl} type="text" id="name" />
                 </div>
-                <div>
-                    <label htmlFor="pwd">password</label>
-                    <input ref={passwordEl} type="password" id="pwd" />
+                <div className="py-4">
+                    <label htmlFor="pwd">Password</label>
+                    <input className="form-control" ref={passwordEl} type="password" id="pwd" />
                 </div>
-                <button onClick={() => fecthConnect()}>Connect</button>
+                <button style={{marginTop : "1em"}} className="btn btn-primary" onClick={() => fecthConnect()}>Connect</button>
             </section>
-            {JSON.stringify(connexion)}
-
         </main>
     )
 }

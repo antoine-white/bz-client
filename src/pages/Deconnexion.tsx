@@ -39,10 +39,9 @@ const Deconnexion: React.FC = () => {
         return <Redirect to={redirect} />
     }
     return (
-        <main>
+        <main className="container ">
             {errors && <p>{errors}</p>}
-            {JSON.stringify(connexion)}
-            <button onClick={() => {disconnectFetch()}}>Disconnect</button>
+            <button className="my-4 row btn btn-danger" onClick={() => {disconnectFetch()}}>Disconnect</button>
         </main>
     );
 }
