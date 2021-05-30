@@ -4,8 +4,6 @@ interface money { money : number}
 
 const MoneyDisplayer : FC<money> = ({money}) => {
     const badgeType = money === 0 ? "alert-warning" : money > 0 ? "alert-success": "alert-danger";
-    console.log(money);
-    
     return (
         <span style={{fontSize:"2em"}} className={`badge ${badgeType}`}>{money}$</span>
     )
